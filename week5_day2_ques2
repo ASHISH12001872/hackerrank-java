@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class solution {
+ public static void main(String[] args) {
+ Scanner sc = new Scanner(System.in);
+ int empId = sc.nextInt();
+ String empName = sc.nextLine();
+ String empDesig = sc.nextLine();
+ int basicSalary = 20000;
+ 
+ if (empId > 201) {
+ int newSalary = basicSalary + 1000;
+ System.out.println("Employee ID: " + empId);
+ System.out.println("Employee Name: " + empName);
+ System.out.println("New Salary: " + newSalary + " INR");
+ } else {
+ System.out.println("No Appraisal");
+ }
+ }
+}
