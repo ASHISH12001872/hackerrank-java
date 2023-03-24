@@ -1,0 +1,50 @@
+import java.util.Scanner;
+public class MrsJhunjhunwala {
+
+    public static double[] average_marks(double[][] marks) {
+        int n = marks.length;
+        double[] averages = new double[n];
+        
+        for (int i = 0; i < n; i++) {
+            // Find the indices of the best 2 academic tasks for this student
+            int maxIndex1 = 0;
+            int maxIndex2 = 1;
+            if (marks[i][1] > marks[i][0]) {
+                maxIndex1 = 1;
+                maxIndex2 = 0;
+            }
+            for (int j = 2; j < marks[i].length; j++) {
+                if (marks[i][j] > marks[i][maxIndex1]) {
+                    maxIndex2 = maxIndex1;
+                    maxIndex1 = j;
+                } else if (marks[i][j] > marks[i][maxIndex2]) {
+                    maxIndex2 = j;
+                }
+            }
+            
+            // Calculate the average of the best 2 academic tasks for this student
+            double sum = marks[i][maxIndex1] + marks[i][maxIndex2];
+            double average = sum / 2.0;
+            averages[i] = average;
+        }
+        
+        return averages;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        double[][] marks = new double[n][3];
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < 3; j++) {
+                marks[i][j] = sc.nextDouble();
+            }
+        }
+        
+        double[] averages = average_marks(marks);
+        for (double average : averages) {
+            System.out.print(average + " ");
+        }
+        System.out.println();
+    }
+}
