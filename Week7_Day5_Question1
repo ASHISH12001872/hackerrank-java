@@ -1,0 +1,49 @@
+import java.io.*;
+
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        String str = scanner.nextLine().trim();
+
+        
+
+        if (!str.matches("[a-zA-Z0-9]+")) {
+
+            System.out.println("Error");
+
+            return;
+
+        }
+
+        int[] frequency = new int[256]; 
+
+        int maxFreq = 0; 
+
+        char maxChar = '\0'; 
+
+        for (int i = 0; i < str.length(); i++) {
+
+            char ch = str.charAt(i);
+
+            frequency[ch]++; 
+
+            if (frequency[ch] > maxFreq || (frequency[ch] == maxFreq && ch < maxChar)) {
+
+                maxFreq = frequency[ch];
+
+                maxChar = ch;
+
+            }
+
+        }
+
+        System.out.println("Maximum occurring character is: "+maxChar);
+
+    }
+
+}
