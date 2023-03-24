@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class FindNthOccurrence {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // read the paragraph
+        String paragraph = scanner.nextLine().trim();
+
+        // read the word and N
+        String[] input = scanner.nextLine().split(" ");
+        String word = input[0];
+        int n = Integer.parseInt(input[1]);
+
+        // find the Nth occurrence of the word
+        int count = 0;
+        int index = -1;
+        while ((index = paragraph.indexOf(word, index + 1)) != -1) {
+            count++;
+            if (count == n) {
+                System.out.println(index);
+                return;
+            }
+        }
+
+        // if not present
+        if (count == 0) {
+            System.out.println("Not Present");
+        }
+        // if present but less than N times
+        else {
+            System.out.println(index);
+        }
+    }
+}
