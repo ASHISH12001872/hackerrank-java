@@ -1,0 +1,33 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner obj=new Scanner(System.in);
+        int n=obj.nextInt();
+        String[] arr=new String[n];
+        for (int i=0;i<n;i++) {
+            arr[i]=obj.next();
+        }
+        int intcount=0;
+        int strcount=0;
+        for (int i=0;i<n;i++) 
+        {
+            try
+            {
+                Integer.parseInt(arr[i]);
+                intcount++;
+            }
+            catch(NumberFormatException e){
+                strcount++;
+            }
+        }
+        System.out.println(intcount);
+        System.out.println(strcount);
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+    }
+}
