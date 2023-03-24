@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        String statement = sc.nextLine();
+
+        int n = sc.nextInt();
+
+        // Check if N is valid
+
+        if (n < 1 || n > 10) {
+
+            System.out.println("Invalid Input");
+
+            return;
+
+        }
+
+        int count = 0;
+
+        for (String word : statement.split(" ")) {
+
+            if (word.length() == n) {
+
+                count++;
+
+            }
+
+        }
+
+        System.out.println(count);
+
+    }
+
+}
