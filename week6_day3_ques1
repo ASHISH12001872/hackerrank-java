@@ -1,0 +1,36 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+class Student {
+String name;
+
+Student(String name)
+{
+if (name instanceof String)
+{
+this.name = name;
+} else {
+this.name = "Unknown";
+}
+}
+
+void printName()
+{
+System.out.println(this.name);
+System.out.println("Unknown");
+
+}
+}
+
+public class Main {
+public static void main(String[] args)
+{
+Scanner obj=new Scanner(System.in);
+String name=obj.nextLine();
+Student s1 = new Student(name);
+s1.printName();
+
+}
+}
