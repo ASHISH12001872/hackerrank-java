@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class DeckCopy {
+ public static void main(String[] args) {
+ Scanner scanner = new Scanner(System.in);
+ int n = scanner.nextInt();
+ int[] deck1 = new int[n];
+ for (int i = 0; i < n; i++) {
+ deck1[i] = scanner.nextInt();
+ }
+ int[] deck2 = new int[n];
+ for (int i = 0; i < n; i++) {
+ deck2[i] = deck1[i];
+ }
+ for (int num : deck1) {
+ System.out.print(num + " ");
+ }
+ System.out.println();
+for (int num : deck2) {
+ System.out.print(num + " ");
+ }
+ System.out.println();
+ }
+}
