@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String correctAnswers = scanner.nextLine().toUpperCase();
+        int n = Integer.parseInt(scanner.nextLine());
+
+        for (int i = 0; i < n; i++) {
+            String studentAnswers = scanner.nextLine().toUpperCase();
+            if (studentAnswers.length() != correctAnswers.length()) {
+                System.out.println("Incorrect Input");
+                break;
+            } else {
+                double score = 0;
+                for (int j = 0; j < correctAnswers.length(); j++) {
+                    if (studentAnswers.charAt(j) == 'X') {
+                        continue;
+                    } else if (studentAnswers.charAt(j) == correctAnswers.charAt(j)) {
+                        score += 1;
+                    } else {
+                        score -= 0.25;
+                    }
+                }
+                System.out.print(score + " ");
+            }
+        }
+        scanner.close();
+    }
+}
