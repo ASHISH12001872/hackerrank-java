@@ -1,0 +1,26 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+    Scanner obj = new Scanner(System.in);
+        int a = obj.nextInt();
+        int b = obj.nextInt();
+
+        if (a < 10 || a > 1000 || b < 10 || b > 1000) {
+            System.out.println("Invalid Input");
+            return;
+        }
+
+        boolean result = isBigger(a, b);
+        System.out.println(result);
+    }
+
+    public static boolean isBigger(int a, int b) {
+        return a > b;
+    }
+}
