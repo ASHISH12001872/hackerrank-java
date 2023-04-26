@@ -1,0 +1,34 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+           Scanner scanner=new Scanner(System.in);
+        String input=scanner.nextLine();
+        if(input.length()<=5) 
+        {
+            System.out.println("Invalid input");
+        } 
+        else 
+        {
+            char[] charArray=input.toCharArray();
+            Arrays.sort(charArray);
+            char prevChar = charArray[0];
+            int count = 1;
+            for(int i=1;i<charArray.length;i++) {
+                char currChar=charArray[i];
+                if (currChar==prevChar) {
+                    count++;
+                } else {
+                    System.out.print(prevChar + "" + count);
+                    prevChar = currChar;
+                    count = 1;
+                }
+            }
+
+            System.out.print(prevChar + "" + count);
+        }
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+    }
+}
