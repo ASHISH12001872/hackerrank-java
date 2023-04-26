@@ -1,0 +1,34 @@
+import java.util.*; 
+ 
+public class Solution { 
+ 
+ public static void main(String[] args) { 
+ Scanner sc = new Scanner(System.in); 
+ String str1 = sc.nextLine(); 
+ String str2 = sc.nextLine(); 
+ 
+ if (str1.length() <= 2 || str2.length() <= 2) { 
+ System.out.println("Invalid Input"); 
+ return; 
+ } 
+ 
+ str1 = str1.toLowerCase(); 
+ str2 = str2.toLowerCase(); 
+ 
+ char[] charArr1 = str1.toCharArray(); 
+ char[] charArr2 = str2.toCharArray(); 
+ 
+ Arrays.sort(charArr1); 
+ Arrays.sort(charArr2); 
+ 
+ String sortedStr1 = new String(charArr1); 
+ String sortedStr2 = new String(charArr2); 
+ 
+ if (sortedStr1.equals(sortedStr2)) { 
+ System.out.println("ANAGRAM"); 
+ } else { 
+ System.out.println("NOT ANAGRAM"); 
+ } 
+ /*Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */ 
+ } 
+}
