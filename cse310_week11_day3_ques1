@@ -1,0 +1,29 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+ public static void main(String[] args) {
+ Scanner sc=new Scanner(System.in);
+ String word1=sc.nextLine().toUpperCase();
+ String word2=sc.nextLine().toUpperCase();
+ 
+ if(word1.length()<3 || word2.length()<3) {
+ System.out.println("ERROR");
+ } 
+ else 
+ {
+ String firstThreeChars=word1.substring(0, 3);
+ String lastThreeChars=new StringBuilder(word2).reverse().substring(0, 3);
+ if(firstThreeChars.equals(lastThreeChars)) 
+ {
+ System.out.println("GREAT");
+ } 
+ else 
+ {
+ System.out.println("TRY NEXT TIME");
+ }
+ }
+ /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+ }
+}
